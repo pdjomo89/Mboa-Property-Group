@@ -46,6 +46,7 @@ export default async function NewsPage() {
       accent: "text-indigo-700",
       chip: "bg-indigo-100 text-indigo-800",
       image: "/pexels-kelly-17290979.jpg",
+      imagePos: "object-center",
     },
     {
       icon: Handshake,
@@ -86,7 +87,7 @@ export default async function NewsPage() {
         </div>
 
         <div className="mt-14 grid gap-8 md:grid-cols-3">
-          {articles.map(({ icon: Icon, category, date, badgeIcon: BadgeIcon, title, body, gradient, softBg, accent, chip, image }) => (
+          {articles.map(({ icon: Icon, category, date, badgeIcon: BadgeIcon, title, body, gradient, softBg, accent, chip, image, imagePos }) => (
             <article
               key={title}
               className="group relative overflow-hidden rounded-3xl border bg-white shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
@@ -100,7 +101,7 @@ export default async function NewsPage() {
                     alt={title}
                     fill
                     sizes="(max-width: 768px) 100vw, 33vw"
-                    className="object-cover object-top"
+                    className={`object-cover ${imagePos ?? "object-top"}`}
                   />
                 ) : (
                   <>
