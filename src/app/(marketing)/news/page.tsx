@@ -8,6 +8,7 @@ import {
   Megaphone,
   TrendingUp,
 } from "lucide-react";
+import Image from "next/image";
 import { getDict } from "@/lib/i18n/server";
 import { NewsletterForm } from "@/components/marketing/newsletter-form";
 
@@ -56,6 +57,7 @@ export default async function NewsPage() {
       softBg: "from-amber-50 to-orange-50",
       accent: "text-orange-700",
       chip: "bg-orange-100 text-orange-800",
+      image: "/geralt-hands-3331216.jpg",
     },
   ];
 
@@ -83,7 +85,7 @@ export default async function NewsPage() {
         </div>
 
         <div className="mt-14 grid gap-8 md:grid-cols-3">
-          {articles.map(({ icon: Icon, category, date, badgeIcon: BadgeIcon, title, body, gradient, softBg, accent, chip }) => (
+          {articles.map(({ icon: Icon, category, date, badgeIcon: BadgeIcon, title, body, gradient, softBg, accent, chip, image }) => (
             <article
               key={title}
               className="group relative overflow-hidden rounded-3xl border bg-white shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
@@ -91,13 +93,25 @@ export default async function NewsPage() {
               <span className={`absolute top-0 left-0 h-1.5 w-full bg-gradient-to-r ${gradient}`} />
 
               <div className={`relative h-44 bg-gradient-to-br ${gradient} overflow-hidden`}>
-                <div className="absolute -top-10 -right-10 h-40 w-40 rounded-full bg-white/20 blur-2xl" />
-                <div className="absolute -bottom-12 -left-8 h-32 w-32 rounded-full bg-white/10 blur-2xl" />
-                <div className="relative flex h-full items-center justify-center">
-                  <div className="rounded-2xl bg-white/20 p-5 ring-1 ring-white/30 backdrop-blur">
-                    <Icon className="h-12 w-12 text-white" strokeWidth={1.75} />
-                  </div>
-                </div>
+                {image ? (
+                  <Image
+                    src={image}
+                    alt={title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover"
+                  />
+                ) : (
+                  <>
+                    <div className="absolute -top-10 -right-10 h-40 w-40 rounded-full bg-white/20 blur-2xl" />
+                    <div className="absolute -bottom-12 -left-8 h-32 w-32 rounded-full bg-white/10 blur-2xl" />
+                    <div className="relative flex h-full items-center justify-center">
+                      <div className="rounded-2xl bg-white/20 p-5 ring-1 ring-white/30 backdrop-blur">
+                        <Icon className="h-12 w-12 text-white" strokeWidth={1.75} />
+                      </div>
+                    </div>
+                  </>
+                )}
                 <div className="absolute top-4 left-4 flex items-center gap-1.5 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-semibold text-foreground shadow-sm backdrop-blur">
                   <BadgeIcon className="h-3 w-3 text-amber-500" />
                   {tt.featured}
