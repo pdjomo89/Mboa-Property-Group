@@ -58,7 +58,7 @@ export default async function NewsPage() {
       softBg: "from-amber-50 to-orange-50",
       accent: "text-orange-700",
       chip: "bg-orange-100 text-orange-800",
-      image: "/geralt-hands-3331216.jpg",
+      image: "/geralt-handshake-4612930.jpg",
     },
   ];
 
