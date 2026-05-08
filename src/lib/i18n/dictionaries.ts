@@ -95,6 +95,11 @@ const dictionaries = {
       newsletterLead: "Product updates, expansion news, and tips for landlords and tenants — straight to your inbox.",
       newsletterPlaceholder: "you@email.com",
       subscribe: "Subscribe",
+      subscribing: "Subscribing…",
+      newsletterSuccess: "You're in! Watch your inbox for updates.",
+      newsletterAlready: "You're already subscribed — thanks!",
+      newsletterErrorInvalid: "That doesn't look like a valid email.",
+      newsletterErrorGeneric: "Couldn't subscribe right now. Try again?",
       categories: {
         product: "Product",
         expansion: "Expansion",
@@ -378,6 +383,11 @@ const dictionaries = {
       newsletterLead: "Mises à jour produit, nouvelles d'expansion et conseils pour propriétaires et locataires — directement dans votre boîte mail.",
       newsletterPlaceholder: "vous@email.com",
       subscribe: "S'abonner",
+      subscribing: "Inscription…",
+      newsletterSuccess: "C'est fait ! Surveillez votre boîte mail.",
+      newsletterAlready: "Vous êtes déjà inscrit — merci !",
+      newsletterErrorInvalid: "Cet e-mail n'a pas l'air valide.",
+      newsletterErrorGeneric: "Inscription impossible pour l'instant. Réessayer ?",
       categories: {
         product: "Produit",
         expansion: "Expansion",

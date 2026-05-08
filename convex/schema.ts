@@ -137,6 +137,13 @@ const schema = defineSchema({
     .index("by_recipient", ["recipientId"])
     .index("by_recipient_unread", ["recipientId", "isRead"]),
 
+  newsletterSubscribers: defineTable({
+    email: v.string(),
+    status: v.union(v.literal("active"), v.literal("unsubscribed")),
+    source: v.optional(v.string()),
+    locale: v.optional(v.string()),
+  }).index("by_email", ["email"]),
+
   contactSubmissions: defineTable({
     name: v.string(),
     email: v.string(),

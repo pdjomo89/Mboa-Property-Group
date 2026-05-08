@@ -9,6 +9,7 @@ import {
   TrendingUp,
 } from "lucide-react";
 import { getDict } from "@/lib/i18n/server";
+import { NewsletterForm } from "@/components/marketing/newsletter-form";
 
 export const metadata = {
   title: "News — Mboa Property Group",
@@ -16,7 +17,7 @@ export const metadata = {
 };
 
 export default async function NewsPage() {
-  const { t } = await getDict();
+  const { t, locale } = await getDict();
   const tt = t.news;
 
   const articles = [
@@ -138,20 +139,7 @@ export default async function NewsPage() {
               <h2 className="mt-3 text-2xl sm:text-3xl font-bold">{tt.newsletterHeadline}</h2>
               <p className="mt-2 text-emerald-50/90 max-w-md">{tt.newsletterLead}</p>
             </div>
-            <form className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
-              <input
-                type="email"
-                required
-                placeholder={tt.newsletterPlaceholder}
-                className="rounded-full border-0 bg-white/15 px-5 py-3 text-sm text-white placeholder:text-emerald-100/70 ring-1 ring-white/30 backdrop-blur focus:outline-none focus:ring-2 focus:ring-white/60 sm:w-72"
-              />
-              <button
-                type="submit"
-                className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-emerald-700 shadow-lg hover:bg-emerald-50 transition"
-              >
-                {tt.subscribe} <ArrowRight className="ml-2 h-4 w-4" />
-              </button>
-            </form>
+            <NewsletterForm t={tt} locale={locale} />
           </div>
         </div>
       </div>
