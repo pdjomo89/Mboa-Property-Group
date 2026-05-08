@@ -110,7 +110,7 @@ export default async function HomePage() {
         <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {[
             { icon: Wrench, ...tt.features.issue, gradient: "from-orange-500 to-amber-500", ring: "ring-orange-200/60", bg: "from-orange-50 to-amber-50", accent: "bg-orange-500", image: "/pexels-hands-1851218.jpg" as string | undefined },
-            { icon: MessageSquare, ...tt.features.chat, gradient: "from-sky-500 to-indigo-500", ring: "ring-sky-200/60", bg: "from-sky-50 to-indigo-50", accent: "bg-sky-500", image: undefined as string | undefined },
+            { icon: MessageSquare, ...tt.features.chat, gradient: "from-sky-500 to-indigo-500", ring: "ring-sky-200/60", bg: "from-sky-50 to-indigo-50", accent: "bg-sky-500", image: "/geralt-laptop-3964426.jpg" as string | undefined },
             { icon: Shield, ...tt.features.roles, gradient: "from-emerald-500 to-green-500", ring: "ring-emerald-200/60", bg: "from-emerald-50 to-green-50", accent: "bg-emerald-500", image: undefined as string | undefined },
           ].map(({ icon: Icon, title, body, gradient, ring, bg, accent, image }) => (
             <div
