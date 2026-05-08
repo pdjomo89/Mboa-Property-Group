@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   Shield,
   MessageSquare,
@@ -108,26 +109,39 @@ export default async function HomePage() {
 
         <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {[
-            { icon: Wrench, ...tt.features.issue, gradient: "from-orange-500 to-amber-500", ring: "ring-orange-200/60", bg: "from-orange-50 to-amber-50", accent: "bg-orange-500" },
+            { icon: Wrench, ...tt.features.issue, gradient: "from-orange-500 to-amber-500", ring: "ring-orange-200/60", bg: "from-orange-50 to-amber-50", accent: "bg-orange-500", image: "/pexels-hands-1851218.jpg" },
             { icon: MessageSquare, ...tt.features.chat, gradient: "from-sky-500 to-indigo-500", ring: "ring-sky-200/60", bg: "from-sky-50 to-indigo-50", accent: "bg-sky-500" },
             { icon: Shield, ...tt.features.roles, gradient: "from-emerald-500 to-green-500", ring: "ring-emerald-200/60", bg: "from-emerald-50 to-green-50", accent: "bg-emerald-500" },
-          ].map(({ icon: Icon, title, body, gradient, ring, bg, accent }) => (
+          ].map(({ icon: Icon, title, body, gradient, ring, bg, accent, image }) => (
             <div
               key={title}
-              className={`group relative overflow-hidden rounded-2xl border bg-white p-6 shadow-sm ring-1 ${ring} hover:shadow-xl hover:-translate-y-1 transition-all duration-300`}
+              className={`group relative overflow-hidden rounded-2xl border bg-white shadow-sm ring-1 ${ring} hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col`}
             >
-              <div className={`absolute inset-0 -z-10 bg-gradient-to-br ${bg} opacity-0 group-hover:opacity-100 transition-opacity`} />
-              <span className={`absolute top-0 left-0 h-1 w-full bg-gradient-to-r ${gradient}`} />
-              <div className={`mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br ${gradient} text-white shadow-lg shadow-black/5`}>
-                <Icon className="h-7 w-7" />
-              </div>
-              <h3 className="text-lg font-semibold flex items-center gap-2">
-                <span className={`h-2 w-2 rounded-full ${accent}`} />
-                {title}
-              </h3>
-              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{body}</p>
-              <div className="mt-5 inline-flex items-center text-sm font-medium text-emerald-700 opacity-0 group-hover:opacity-100 transition-opacity">
-                {t.common.learnMore} <ArrowRight className="ml-1 h-4 w-4" />
+              <span className={`absolute top-0 left-0 z-10 h-1 w-full bg-gradient-to-r ${gradient}`} />
+              {image && (
+                <div className="relative h-48 w-full overflow-hidden">
+                  <Image
+                    src={image}
+                    alt={title}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover"
+                  />
+                </div>
+              )}
+              <div className="relative flex-1 p-6">
+                <div className={`absolute inset-0 -z-10 bg-gradient-to-br ${bg} opacity-0 group-hover:opacity-100 transition-opacity`} />
+                <div className={`mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br ${gradient} text-white shadow-lg shadow-black/5`}>
+                  <Icon className="h-7 w-7" />
+                </div>
+                <h3 className="text-lg font-semibold flex items-center gap-2">
+                  <span className={`h-2 w-2 rounded-full ${accent}`} />
+                  {title}
+                </h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{body}</p>
+                <div className="mt-5 inline-flex items-center text-sm font-medium text-emerald-700 opacity-0 group-hover:opacity-100 transition-opacity">
+                  {t.common.learnMore} <ArrowRight className="ml-1 h-4 w-4" />
+                </div>
               </div>
             </div>
           ))}
