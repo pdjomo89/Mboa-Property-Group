@@ -100,7 +100,7 @@ export default async function NewsPage() {
                     alt={title}
                     fill
                     sizes="(max-width: 768px) 100vw, 33vw"
-                    className="object-cover"
+                    className="object-cover object-top"
                   />
                 ) : (
                   <>
