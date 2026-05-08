@@ -36,6 +36,14 @@ yarn-error.log*
 # vercel
 .vercel
 
+# convex generated
+convex/_generated
+
+# convex agent skills (local tooling, installed via `npx convex ai-files install`)
+.agents
+.claude
+skills-lock.json
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

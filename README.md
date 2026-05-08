@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mboa Property Group
+
+Property management platform connecting tenants, landlords, and administrators in Cameroon.
+
+## Features
+
+- **Role-Based Access**: Admin, Tenant, and Landlord dashboards
+- **Issue Reporting**: Tenants report property issues with urgency and category
+- **Issue Workflow**: New -> Reviewed -> Landlord Notified -> Repair In Progress -> Resolved -> Closed
+- **Real-Time Messaging**: Per-issue message threads between admin, tenants, and landlords
+- **Notifications**: In-app + WhatsApp (Twilio) + Email (Resend) notifications
+- **Property Management**: Admin manages properties, units, and tenant/landlord assignments
+- **Bilingual Support**: French and English notification messages based on user preference
+
+## Tech Stack
+
+- **Frontend**: Next.js 16 (App Router), TypeScript, Tailwind CSS, shadcn/ui
+- **Backend**: Convex (real-time database, auth, file storage)
+- **Auth**: Convex Auth with Password provider
+- **WhatsApp**: Twilio WhatsApp Business API
+- **Email**: Resend email API
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+
+- A Convex account (https://convex.dev)
+
+### Setup
 
 ```bash
+# Install dependencies
+npm install
+
+# Set up Convex (follow the prompts to create a project)
+npx convex dev
+
+# In a separate terminal, start the Next.js dev server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Environment Variables
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Copy `.env.local.example` to `.env.local` and fill in your values:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+# Convex
+CONVEX_DEPLOYMENT=your_convex_deployment
+NEXT_PUBLIC_CONVEX_URL=https://your-deployment.convex.cloud
 
-## Learn More
+# Twilio (WhatsApp) - get from https://console.twilio.com
+TWILIO_ACCOUNT_SID=your_twilio_account_sid
+TWILIO_AUTH_TOKEN=your_twilio_auth_token
+TWILIO_WHATSAPP_FROM=+14155238886
 
-To learn more about Next.js, take a look at the following resources:
+# Resend (Email) - get from https://resend.com/api-keys
+RESEND_API_KEY=your_resend_api_key
+RESEND_FROM_EMAIL=Mboa Property <notifications@yourdomain.com>
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Note: Set Twilio and Resend env vars in your **Convex dashboard** (Settings > Environment Variables), not in `.env.local`, since they're used by Convex server-side actions.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Roles
 
-## Deploy on Vercel
+| Role | Capabilities |
+|------|-------------|
+| **Admin** | Manage properties, units, tenants, landlords. Review issues, update statuses, message all parties |
+| **Tenant** | View assigned unit, report issues, track issue status, message admin |
+| **Landlord** | View owned properties, see assigned issues, acknowledge repairs, message admin |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The first user to register automatically becomes the Admin.
