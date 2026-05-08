@@ -45,7 +45,7 @@ export default async function NewsPage() {
       softBg: "from-sky-50 to-indigo-50",
       accent: "text-indigo-700",
       chip: "bg-indigo-100 text-indigo-800",
-      image: "/antonin77-apartment-743378.jpg",
+      image: "/pexels-kelly-17290979.jpg",
     },
     {
       icon: Handshake,
