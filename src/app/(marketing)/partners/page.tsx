@@ -2,12 +2,11 @@ import Link from "next/link";
 import {
   ArrowRight,
   Handshake,
-  Landmark,
-  Smartphone,
-  Wallet,
-  Signal,
-  Zap,
-  Droplet,
+  HardHat,
+  Cpu,
+  UtensilsCrossed,
+  ShoppingBag,
+  Ticket,
   Sparkles,
   Globe,
 } from "lucide-react";
@@ -23,12 +22,11 @@ export default async function PartnersPage() {
   const tt = t.partners;
 
   const partners = [
-    { name: "Afriland", category: tt.categories.banking, icon: Landmark, gradient: "from-rose-500 to-red-500", soft: "from-rose-50 to-red-50", ring: "ring-rose-200" },
-    { name: "MTN MoMo", category: tt.categories.mobileMoney, icon: Smartphone, gradient: "from-amber-500 to-yellow-500", soft: "from-amber-50 to-yellow-50", ring: "ring-amber-200" },
-    { name: "Orange Money", category: tt.categories.mobileMoney, icon: Wallet, gradient: "from-orange-500 to-red-500", soft: "from-orange-50 to-red-50", ring: "ring-orange-200" },
-    { name: "Camtel", category: tt.categories.telecom, icon: Signal, gradient: "from-sky-500 to-indigo-500", soft: "from-sky-50 to-indigo-50", ring: "ring-sky-200" },
-    { name: "Eneo", category: tt.categories.energy, icon: Zap, gradient: "from-yellow-500 to-amber-500", soft: "from-yellow-50 to-amber-50", ring: "ring-yellow-200" },
-    { name: "Camwater", category: tt.categories.utility, icon: Droplet, gradient: "from-cyan-500 to-blue-500", soft: "from-cyan-50 to-blue-50", ring: "ring-cyan-200" },
+    { name: "Survey Engineering Sarl", category: "Engineering", icon: HardHat, gradient: "from-orange-500 to-amber-500", soft: "from-orange-50 to-amber-50", ring: "ring-orange-200" },
+    { name: "AfriNovaTech Consulting", category: "Consulting", icon: Cpu, gradient: "from-violet-500 to-indigo-500", soft: "from-violet-50 to-indigo-50", ring: "ring-violet-200" },
+    { name: "TaraFoods", category: "Food", icon: UtensilsCrossed, gradient: "from-emerald-500 to-green-500", soft: "from-emerald-50 to-green-50", ring: "ring-emerald-200" },
+    { name: "Shop by JLC", category: "Retail", icon: ShoppingBag, gradient: "from-pink-500 to-rose-500", soft: "from-pink-50 to-rose-50", ring: "ring-pink-200" },
+    { name: "TicketApp", category: "Ticketing", icon: Ticket, gradient: "from-sky-500 to-blue-500", soft: "from-sky-50 to-blue-50", ring: "ring-sky-200" },
   ];
 
   return (
