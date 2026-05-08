@@ -7,6 +7,7 @@ import {
   UtensilsCrossed,
   ShoppingBag,
   Ticket,
+  Code2,
   Sparkles,
   Globe,
 } from "lucide-react";
@@ -27,6 +28,7 @@ export default async function PartnersPage() {
     { name: "TaraFoods", category: "Food", icon: UtensilsCrossed, gradient: "from-emerald-500 to-green-500", soft: "from-emerald-50 to-green-50", ring: "ring-emerald-200" },
     { name: "Shop by JLC", category: "Retail", icon: ShoppingBag, gradient: "from-pink-500 to-rose-500", soft: "from-pink-50 to-rose-50", ring: "ring-pink-200" },
     { name: "TicketApp", category: "Ticketing", icon: Ticket, gradient: "from-sky-500 to-blue-500", soft: "from-sky-50 to-blue-50", ring: "ring-sky-200" },
+    { name: "J'aime le Code", category: "Software", icon: Code2, gradient: "from-teal-500 to-cyan-500", soft: "from-teal-50 to-cyan-50", ring: "ring-teal-200" },
   ];
 
   return (
