@@ -61,20 +61,20 @@ export default async function ServicesPage() {
         </div>
 
         <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {services.map(({ icon: Icon, title, body, gradient, soft, ring, image, fit }) => (
+          {services.map(({ icon: Icon, title, body, gradient, soft, ring, image }) => (
             <div
               key={title}
               className={`group relative overflow-hidden rounded-2xl border bg-white shadow-sm ring-1 ${ring} hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col`}
             >
               <span className={`absolute top-0 left-0 z-10 h-1 w-full bg-gradient-to-r ${gradient}`} />
               {image && (
-                <div className={`relative h-40 w-full overflow-hidden ${fit === "contain" ? `bg-gradient-to-br ${soft}` : ""}`}>
+                <div className="relative h-40 w-full overflow-hidden">
                   <Image
                     src={image}
                     alt={title}
                     fill
                     sizes="(max-width: 768px) 100vw, 33vw"
-                    className={fit === "contain" ? "object-contain" : "object-cover object-top"}
+                    className="object-cover object-top"
                   />
                 </div>
               )}
