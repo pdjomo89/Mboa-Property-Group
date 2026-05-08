@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowRight,
   KeyRound,
@@ -24,7 +25,7 @@ export default async function ServicesPage() {
   const services = [
     { icon: KeyRound, title: tt.items.placement.title, body: tt.items.placement.body, gradient: "from-emerald-500 to-teal-500", soft: "from-emerald-50 to-teal-50", ring: "ring-emerald-100" },
     { icon: Receipt, title: tt.items.rent.title, body: tt.items.rent.body, gradient: "from-amber-500 to-orange-500", soft: "from-amber-50 to-orange-50", ring: "ring-amber-100" },
-    { icon: Wrench, title: tt.items.maintenance.title, body: tt.items.maintenance.body, gradient: "from-sky-500 to-indigo-500", soft: "from-sky-50 to-indigo-50", ring: "ring-sky-100" },
+    { icon: Wrench, title: tt.items.maintenance.title, body: tt.items.maintenance.body, gradient: "from-sky-500 to-indigo-500", soft: "from-sky-50 to-indigo-50", ring: "ring-sky-100", image: "/picjumbo_com-tools-864983.jpg" },
     { icon: ClipboardList, title: tt.items.mediation.title, body: tt.items.mediation.body, gradient: "from-rose-500 to-pink-500", soft: "from-rose-50 to-pink-50", ring: "ring-rose-100" },
     { icon: ShieldCheck, title: tt.items.inspections.title, body: tt.items.inspections.body, gradient: "from-violet-500 to-purple-500", soft: "from-violet-50 to-purple-50", ring: "ring-violet-100" },
     { icon: FileSpreadsheet, title: tt.items.reporting.title, body: tt.items.reporting.body, gradient: "from-cyan-500 to-blue-500", soft: "from-cyan-50 to-blue-50", ring: "ring-cyan-100" },
@@ -60,18 +61,31 @@ export default async function ServicesPage() {
         </div>
 
         <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {services.map(({ icon: Icon, title, body, gradient, soft, ring }) => (
+          {services.map(({ icon: Icon, title, body, gradient, soft, ring, image }) => (
             <div
               key={title}
-              className={`group relative overflow-hidden rounded-2xl border bg-white p-6 shadow-sm ring-1 ${ring} hover:shadow-xl hover:-translate-y-1 transition-all duration-300`}
+              className={`group relative overflow-hidden rounded-2xl border bg-white shadow-sm ring-1 ${ring} hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col`}
             >
-              <span className={`absolute top-0 left-0 h-1 w-full bg-gradient-to-r ${gradient}`} />
-              <div className={`absolute inset-0 -z-10 bg-gradient-to-br ${soft} opacity-0 group-hover:opacity-100 transition-opacity`} />
-              <div className={`mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${gradient} text-white shadow-lg shadow-black/5`}>
-                <Icon className="h-6 w-6" />
+              <span className={`absolute top-0 left-0 z-10 h-1 w-full bg-gradient-to-r ${gradient}`} />
+              {image && (
+                <div className="relative h-40 w-full overflow-hidden">
+                  <Image
+                    src={image}
+                    alt={title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover"
+                  />
+                </div>
+              )}
+              <div className="relative flex-1 p-6">
+                <div className={`absolute inset-0 -z-10 bg-gradient-to-br ${soft} opacity-0 group-hover:opacity-100 transition-opacity`} />
+                <div className={`mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${gradient} text-white shadow-lg shadow-black/5`}>
+                  <Icon className="h-6 w-6" />
+                </div>
+                <h3 className="text-lg font-semibold">{title}</h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{body}</p>
               </div>
-              <h3 className="text-lg font-semibold">{title}</h3>
-              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{body}</p>
             </div>
           ))}
         </div>
