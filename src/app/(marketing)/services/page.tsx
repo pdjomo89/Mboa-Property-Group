@@ -28,7 +28,7 @@ export default async function ServicesPage() {
     { icon: Wrench, title: tt.items.maintenance.title, body: tt.items.maintenance.body, gradient: "from-sky-500 to-indigo-500", soft: "from-sky-50 to-indigo-50", ring: "ring-sky-100", image: "/picjumbo_com-tools-864983.jpg" },
     { icon: ClipboardList, title: tt.items.mediation.title, body: tt.items.mediation.body, gradient: "from-rose-500 to-pink-500", soft: "from-rose-50 to-pink-50", ring: "ring-rose-100" },
     { icon: ShieldCheck, title: tt.items.inspections.title, body: tt.items.inspections.body, gradient: "from-violet-500 to-purple-500", soft: "from-violet-50 to-purple-50", ring: "ring-violet-100", image: "/sergey2025-worker-9824293.jpg" },
-    { icon: FileSpreadsheet, title: tt.items.reporting.title, body: tt.items.reporting.body, gradient: "from-cyan-500 to-blue-500", soft: "from-cyan-50 to-blue-50", ring: "ring-cyan-100" },
+    { icon: FileSpreadsheet, title: tt.items.reporting.title, body: tt.items.reporting.body, gradient: "from-cyan-500 to-blue-500", soft: "from-cyan-50 to-blue-50", ring: "ring-cyan-100", image: "/pexels-analysis-1841158.jpg" },
   ];
 
   const steps = [
