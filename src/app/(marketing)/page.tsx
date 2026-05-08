@@ -119,7 +119,7 @@ export default async function HomePage() {
             >
               <span className={`absolute top-0 left-0 z-10 h-1 w-full bg-gradient-to-r ${gradient}`} />
               {image && (
-                <div className="relative h-32 w-full overflow-hidden">
+                <div className="relative h-48 w-full overflow-hidden">
                   <Image
                     src={image}
                     alt={title}
