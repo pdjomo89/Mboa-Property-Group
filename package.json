@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "npx convex deploy --cmd 'npm run build:next'",
-    "build:next": "next build",
+    "build:next": "npx convex codegen --typecheck=disable && next build",
     "start": "next start",
     "lint": "eslint"
   },
