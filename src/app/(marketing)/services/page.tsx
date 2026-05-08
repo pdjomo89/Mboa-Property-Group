@@ -23,7 +23,7 @@ export default async function ServicesPage() {
   const tt = t.services;
 
   const services = [
-    { icon: KeyRound, title: tt.items.placement.title, body: tt.items.placement.body, gradient: "from-emerald-500 to-teal-500", soft: "from-emerald-50 to-teal-50", ring: "ring-emerald-100" },
+    { icon: KeyRound, title: tt.items.placement.title, body: tt.items.placement.body, gradient: "from-emerald-500 to-teal-500", soft: "from-emerald-50 to-teal-50", ring: "ring-emerald-100", image: "/pexels-ivan-s-8962336.jpg" },
     { icon: Receipt, title: tt.items.rent.title, body: tt.items.rent.body, gradient: "from-amber-500 to-orange-500", soft: "from-amber-50 to-orange-50", ring: "ring-amber-100" },
     { icon: Wrench, title: tt.items.maintenance.title, body: tt.items.maintenance.body, gradient: "from-sky-500 to-indigo-500", soft: "from-sky-50 to-indigo-50", ring: "ring-sky-100", image: "/picjumbo_com-tools-864983.jpg" },
     { icon: ClipboardList, title: tt.items.mediation.title, body: tt.items.mediation.body, gradient: "from-rose-500 to-pink-500", soft: "from-rose-50 to-pink-50", ring: "ring-rose-100", image: "/nzchrissy2-connections-990699.jpg" },
