@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowRight,
   Handshake,
@@ -6,10 +7,10 @@ import {
   Cpu,
   UtensilsCrossed,
   ShoppingBag,
-  Ticket,
   Code2,
   Sparkles,
   Globe,
+  type LucideIcon,
 } from "lucide-react";
 import { getDict } from "@/lib/i18n/server";
 
@@ -22,12 +23,20 @@ export default async function PartnersPage() {
   const { t } = await getDict();
   const tt = t.partners;
 
-  const partners = [
+  const partners: Array<{
+    name: string;
+    category: string;
+    icon?: LucideIcon;
+    logo?: string;
+    gradient: string;
+    soft: string;
+    ring: string;
+  }> = [
     { name: "Survey Engineering Sarl", category: "Engineering", icon: HardHat, gradient: "from-orange-500 to-amber-500", soft: "from-orange-50 to-amber-50", ring: "ring-orange-200" },
     { name: "AfriNovaTech Consulting", category: "IT Consulting", icon: Cpu, gradient: "from-violet-500 to-indigo-500", soft: "from-violet-50 to-indigo-50", ring: "ring-violet-200" },
     { name: "TaraFoods", category: "Food", icon: UtensilsCrossed, gradient: "from-emerald-500 to-green-500", soft: "from-emerald-50 to-green-50", ring: "ring-emerald-200" },
     { name: "Shop by JLC", category: "Retail", icon: ShoppingBag, gradient: "from-pink-500 to-rose-500", soft: "from-pink-50 to-rose-50", ring: "ring-pink-200" },
-    { name: "TicketApp", category: "Ticketing", icon: Ticket, gradient: "from-sky-500 to-blue-500", soft: "from-sky-50 to-blue-50", ring: "ring-sky-200" },
+    { name: "TicketApp", category: "Ticketing", logo: "/ticketflow.png", gradient: "from-sky-500 to-blue-500", soft: "from-sky-50 to-blue-50", ring: "ring-sky-200" },
     { name: "J'aime le Code", category: "Software", icon: Code2, gradient: "from-teal-500 to-cyan-500", soft: "from-teal-50 to-cyan-50", ring: "ring-teal-200" },
   ];
 
@@ -55,7 +64,7 @@ export default async function PartnersPage() {
         </div>
 
         <div className="mt-14 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-6">
-          {partners.map(({ name, category, icon: Icon, gradient, soft, ring }) => (
+          {partners.map(({ name, category, icon: Icon, logo, gradient, soft, ring }) => (
             <div
               key={name}
               className={`group relative overflow-hidden rounded-2xl border bg-white p-6 shadow-sm ring-1 ${ring} hover:shadow-xl hover:-translate-y-1 transition-all duration-300`}
@@ -63,9 +72,15 @@ export default async function PartnersPage() {
               <span className={`absolute top-0 left-0 h-1 w-full bg-gradient-to-r ${gradient}`} />
               <div className={`absolute inset-0 -z-10 bg-gradient-to-br ${soft} opacity-0 group-hover:opacity-100 transition-opacity`} />
               <div className="flex items-center gap-4">
-                <div className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br ${gradient} text-white shadow-lg shadow-black/5`}>
-                  <Icon className="h-7 w-7" />
-                </div>
+                {logo ? (
+                  <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-xl shadow-lg shadow-black/5 ring-1 ring-black/5">
+                    <Image src={logo} alt={`${name} logo`} fill sizes="56px" className="object-cover" />
+                  </div>
+                ) : Icon ? (
+                  <div className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br ${gradient} text-white shadow-lg shadow-black/5`}>
+                    <Icon className="h-7 w-7" />
+                  </div>
+                ) : null}
                 <div>
                   <p className="text-base font-bold">{name}</p>
                   <p className={`text-xs font-medium uppercase tracking-wider bg-gradient-to-r ${gradient} bg-clip-text text-transparent`}>
