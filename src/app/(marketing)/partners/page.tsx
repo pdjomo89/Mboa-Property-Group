@@ -6,7 +6,6 @@ import {
   HardHat,
   Cpu,
   UtensilsCrossed,
-  ShoppingBag,
   Code2,
   Sparkles,
   Globe,
@@ -35,7 +34,7 @@ export default async function PartnersPage() {
     { name: "Survey Engineering Sarl", category: "Engineering", icon: HardHat, gradient: "from-orange-500 to-amber-500", soft: "from-orange-50 to-amber-50", ring: "ring-orange-200" },
     { name: "AfriNovaTech Consulting", category: "IT Consulting", icon: Cpu, gradient: "from-violet-500 to-indigo-500", soft: "from-violet-50 to-indigo-50", ring: "ring-violet-200" },
     { name: "TaraFoods", category: "Food", icon: UtensilsCrossed, gradient: "from-emerald-500 to-green-500", soft: "from-emerald-50 to-green-50", ring: "ring-emerald-200" },
-    { name: "Shop by JLC", category: "Retail", icon: ShoppingBag, gradient: "from-pink-500 to-rose-500", soft: "from-pink-50 to-rose-50", ring: "ring-pink-200" },
+    { name: "Shop by JLC", category: "Retail", logo: "/shopbyjlc.jpeg", gradient: "from-pink-500 to-rose-500", soft: "from-pink-50 to-rose-50", ring: "ring-pink-200" },
     { name: "TicketApp", category: "Ticketing", logo: "/ticketflow.png", gradient: "from-sky-500 to-blue-500", soft: "from-sky-50 to-blue-50", ring: "ring-sky-200" },
     { name: "J'aime le Code", category: "Software", icon: Code2, gradient: "from-teal-500 to-cyan-500", soft: "from-teal-50 to-cyan-50", ring: "ring-teal-200" },
   ];
