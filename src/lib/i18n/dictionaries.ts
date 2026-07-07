@@ -321,7 +321,7 @@ const dictionaries = {
       whatsappPanel: {
         eyebrow: "Need a quick answer?",
         title: "Message us on WhatsApp",
-        body: "Tap the green chat button at the bottom-right, or message us directly at +1 818 647 2187.",
+        body: "Tap the green chat button at the bottom-right to start a WhatsApp conversation with us.",
       },
       form: {
         title: "Send us a message",
@@ -347,7 +347,7 @@ const dictionaries = {
       status: "Typically replies within minutes",
       greeting: "👋 Hi there! How can we help with your property today?",
       placeholder: "Type a message…",
-      footnote: "Opens WhatsApp · +1 818 647 2187",
+      footnote: "Opens WhatsApp",
       defaultMessage: "Hi Mboa Property Group, I'd like to know more.",
       openLabel: "Open WhatsApp chat",
       closeLabel: "Close WhatsApp chat",
@@ -676,7 +676,7 @@ const dictionaries = {
       whatsappPanel: {
         eyebrow: "Besoin d'une réponse rapide ?",
         title: "Écrivez-nous sur WhatsApp",
-        body: "Cliquez sur le bouton vert en bas à droite, ou écrivez-nous directement au +1 818 647 2187.",
+        body: "Cliquez sur le bouton vert en bas à droite pour démarrer une conversation WhatsApp avec nous.",
       },
       form: {
         title: "Envoyez-nous un message",
@@ -702,7 +702,7 @@ const dictionaries = {
       status: "Réponse en quelques minutes en général",
       greeting: "👋 Bonjour ! Comment pouvons-nous vous aider aujourd'hui ?",
       placeholder: "Tapez un message…",
-      footnote: "Ouvre WhatsApp · +1 818 647 2187",
+      footnote: "Ouvre WhatsApp",
       defaultMessage: "Bonjour Mboa Property Group, j'aimerais en savoir plus.",
       openLabel: "Ouvrir le chat WhatsApp",
       closeLabel: "Fermer le chat WhatsApp",
