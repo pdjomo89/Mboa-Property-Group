@@ -44,7 +44,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-green-50 to-emerald-100 p-4 relative overflow-hidden">
+    <div className="min-h-screen flex items-center justify-center p-4 relative overflow-hidden">
       <div
         className="absolute inset-0 bg-center bg-no-repeat opacity-5 pointer-events-none"
         style={{ backgroundImage: "url('/logo.png')", backgroundSize: "500px" }}

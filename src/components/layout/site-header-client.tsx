@@ -12,6 +12,7 @@ export function SiteHeaderClient({ t, toggle }: { t: Dictionary; toggle: ReactNo
   const navItems = [
     { href: "/services", label: t.nav.services },
     { href: "/rentals", label: t.nav.rentals },
+    { href: "/land", label: t.nav.land },
     { href: "/about", label: t.nav.about },
     { href: "/news", label: t.nav.news },
     { href: "/partners", label: t.nav.partners },

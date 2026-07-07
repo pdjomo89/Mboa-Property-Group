@@ -10,7 +10,7 @@ export default async function MarketingLayout({
 }) {
   const { t } = await getDict();
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-green-50 via-white to-emerald-50">
+    <div className="min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-1">{children}</main>
       <SiteFooter />

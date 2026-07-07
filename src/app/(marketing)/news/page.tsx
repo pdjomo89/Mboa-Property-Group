@@ -7,6 +7,7 @@ import {
   Sparkles,
   Megaphone,
   TrendingUp,
+  Landmark,
 } from "lucide-react";
 import Image from "next/image";
 import { getDict } from "@/lib/i18n/server";
@@ -33,6 +34,8 @@ export default async function NewsPage() {
       softBg: "from-emerald-50 to-teal-50",
       accent: "text-emerald-700",
       chip: "bg-emerald-100 text-emerald-800",
+      image: "/dashboard-mockup.jpg",
+      imagePos: "object-center",
     },
     {
       icon: Building2,
@@ -61,7 +64,36 @@ export default async function NewsPage() {
       chip: "bg-orange-100 text-orange-800",
       image: "/geralt-handshake-4612930.jpg",
     },
-  ];
+    {
+      icon: Landmark,
+      category: tt.categories.land,
+      date: "Jul 2026",
+      badgeIcon: Sparkles,
+      title: tt.articles.d.title,
+      body: tt.articles.d.body,
+      gradient: "from-lime-500 via-green-500 to-emerald-500",
+      softBg: "from-lime-50 to-green-50",
+      accent: "text-emerald-700",
+      chip: "bg-lime-100 text-lime-800",
+      image: "/land-plot.jpg",
+      imagePos: "object-center",
+      href: "/land",
+    },
+  ] as Array<{
+    icon: typeof Newspaper;
+    category: string;
+    date: string;
+    badgeIcon: typeof Sparkles;
+    title: string;
+    body: string;
+    gradient: string;
+    softBg: string;
+    accent: string;
+    chip: string;
+    image?: string;
+    imagePos?: string;
+    href?: string;
+  }>;
 
   return (
     <section className="relative overflow-hidden">
@@ -86,8 +118,8 @@ export default async function NewsPage() {
           <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">{tt.lead}</p>
         </div>
 
-        <div className="mt-14 grid gap-8 md:grid-cols-3">
-          {articles.map(({ icon: Icon, category, date, badgeIcon: BadgeIcon, title, body, gradient, softBg, accent, chip, image, imagePos }) => (
+        <div className="mt-14 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          {articles.map(({ icon: Icon, category, date, badgeIcon: BadgeIcon, title, body, gradient, softBg, accent, chip, image, imagePos, href }) => (
             <article
               key={title}
               className="group relative overflow-hidden rounded-3xl border bg-white shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
@@ -133,7 +165,7 @@ export default async function NewsPage() {
                 <h3 className="mt-3 text-lg font-semibold leading-snug">{title}</h3>
                 <p className="mt-2 text-sm text-muted-foreground flex-1 leading-relaxed">{body}</p>
                 <a
-                  href="#"
+                  href={href ?? "#"}
                   className={`mt-5 inline-flex items-center gap-1 text-sm font-medium ${accent} hover:gap-2 transition-all`}
                 >
                   {t.common.readMore} <ArrowRight className="h-4 w-4" />

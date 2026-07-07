@@ -40,7 +40,9 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
+    background: linear-gradient(to bottom, #f0fdf4 0%, #ffffff 100%);
+    background-attachment: fixed;
     font-family: var(--font-sans), system-ui, sans-serif;
   }
 }

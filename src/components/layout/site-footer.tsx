@@ -80,6 +80,7 @@ export async function SiteFooter() {
             <ul className="mt-4 space-y-2 text-sm text-emerald-100/80">
               <li><Link href="/services" className="hover:text-white transition-colors">{t.footer.links.services}</Link></li>
               <li><Link href="/rentals" className="hover:text-white transition-colors">{t.footer.links.rentals}</Link></li>
+              <li><Link href="/land" className="hover:text-white transition-colors">{t.footer.links.land}</Link></li>
               <li><Link href="/about" className="hover:text-white transition-colors">{t.footer.links.about}</Link></li>
               <li><Link href="/news" className="hover:text-white transition-colors">{t.footer.links.news}</Link></li>
               <li><Link href="/partners" className="hover:text-white transition-colors">{t.footer.links.partners}</Link></li>
