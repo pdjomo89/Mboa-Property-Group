@@ -318,11 +318,6 @@ const dictionaries = {
         office: { label: "Visit us", value: "Douala, Cameroon" },
         hours: { label: "Hours", value: "Mon–Sat · 8h00 – 18h00" },
       },
-      whatsappPanel: {
-        eyebrow: "Need a quick answer?",
-        title: "Message us on WhatsApp",
-        body: "Tap the green chat button at the bottom-right to start a WhatsApp conversation with us.",
-      },
       form: {
         title: "Send us a message",
         subtitle: "We'll get back to you shortly.",
@@ -672,11 +667,6 @@ const dictionaries = {
         phone: { label: "Téléphone" },
         office: { label: "Bureau", value: "Douala, Cameroun" },
         hours: { label: "Horaires", value: "Lun–Sam · 8h00 – 18h00" },
-      },
-      whatsappPanel: {
-        eyebrow: "Besoin d'une réponse rapide ?",
-        title: "Écrivez-nous sur WhatsApp",
-        body: "Cliquez sur le bouton vert en bas à droite pour démarrer une conversation WhatsApp avec nous.",
       },
       form: {
         title: "Envoyez-nous un message",
